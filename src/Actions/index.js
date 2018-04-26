@@ -8,3 +8,10 @@ export const fetchAllProduct = (products) => {
 		products:products
 	}
 }
+
+export const fetchAllPlan = (plans) => {
+	return {
+		type:types.FETCH_ALL_PLAN,
+		plans:plans
+	}
+}

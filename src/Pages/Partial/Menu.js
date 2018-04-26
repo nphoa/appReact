@@ -21,7 +21,7 @@ class Menu extends Component {
                       <Link to ="/product">Product</Link>
                     </li>
                     <li>
-                      <a href="grid.html">Grid</a>
+                      <Link to ="/plan">Plan</Link>
                     </li>
                   </ul>
                   {/* /nav-second-level */}

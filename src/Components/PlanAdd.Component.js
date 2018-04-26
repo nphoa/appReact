@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import WOW from "wow.js";
-class ProductAddComponent extends Component {
+import {Link} from 'react-router-dom';
+class PlanAddComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      code:'',
+      id:0,
       name:'',
-      price:0,
-      inventory:0,
-      description:'',
-      status:'1'
-
+      start_Date:'',
+      end_Date:0
     }
   }
   componentWillMount() {
@@ -27,7 +25,8 @@ class ProductAddComponent extends Component {
   }
   onSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    //console.log(this.state);
+    this.props.onAddPlan(this.state);
   }
   render() {
     return (
@@ -41,15 +40,6 @@ class ProductAddComponent extends Component {
               <div className="form-body">
                 <form onSubmit={this.onSubmit}>
                   <div className="form-group">
-                    <label>Code</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="code"
-                      onChange={this.onChange}
-                    />
-                  </div>
-                  <div className="form-group">
                     <label>Name</label>
                     <input
                       type="text"
@@ -59,42 +49,32 @@ class ProductAddComponent extends Component {
                     />
                   </div>
                   <div className="form-group">
-                  <label>Price</label>
+                    <label>Start Date</label>
+                    <input
+                      type="date"
+                      className="form-control"
+                      name="start_Date"
+                      onChange={this.onChange}
+                    />
+                  </div>
+                  <div className="form-group">
+                  <label>End Date</label>
                   <input
-                    type="number"
+                    type="date"
                     className="form-control"
-                    name="price"
+                    name="end_Date"
                     onChange={this.onChange}
                   />
                 </div>
-                <div className="form-group">
-                  <label>Inventory</label>
-                  <input
-                    type="number"
-                    className="form-control"
-                    name="inventory"
-                    onChange={this.onChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Description</label>
-                  <textarea
-                    type="text"
-                    className="form-control"
-                    name="description"
-                    onChange={this.onChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Status</label>  
-                  <select className="form-control" name="status" onChange={this.onChange}>
-                      <option value='1'>Active</option>
-                      <option value='0'>Unactive</option>
-                  </select>
-                </div>
-                  <button type="submit" className="btn btn-default">
+                    <div>
+                    <button type="submit" className="btn btn-default" style={{ marginRight:"10px" }}>
                     Submit
-                  </button>{" "}
+                  </button>
+                  <Link to="/plan" type="button" className="btn btn-success">
+                    Cancel
+                   </Link>
+                </div>
+                
                 </form>
               </div>
             </div>
@@ -105,4 +85,4 @@ class ProductAddComponent extends Component {
   }
 }
 
-export default ProductAddComponent;
+export default PlanAddComponent;

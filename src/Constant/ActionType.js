@@ -3,3 +3,4 @@ export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const DELETE_CART = 'DELETE_CART';
 export const SAVE_MESSAGE = 'SAVE_MESSAGE';
 export const FETCH_ALL_PRODUCT = 'FETCH_ALL_PRODUCT';
+export const FETCH_ALL_PLAN = 'FETCH_ALL_PLAN';
